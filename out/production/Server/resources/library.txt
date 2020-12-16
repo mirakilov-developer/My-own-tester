@@ -2,7 +2,7 @@ Tests size: 3
 
 
 Test number 1
-	Name of test: Test demo 2
+	Name of test: Multiplication
 	Questions size: 3
 
 	Question number 1
