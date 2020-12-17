@@ -8,12 +8,11 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class TestLibrary {
-    private static ArrayList<Test> testLibrary = new ArrayList<>();
-    private static File libraryFile = new File("E:\\I_am_back\\Tester\\chatexample.Server\\src\\resources\\library.txt");
+    private static final ArrayList<Test> testLibrary = new ArrayList<>();
+    private static final File libraryFile = new File("E:\\I_am_back\\Tester\\Server\\src\\resources\\library.txt");
 
     public static void fillTestLibrary() {
         try (Scanner scanner = new Scanner(libraryFile)) {
@@ -58,8 +57,19 @@ public class TestLibrary {
         }
     }
 
+    public static int getLibrarySize(){
+        return testLibrary.size();
+    }
+
     public static Test getTestFromIndex(int index) {
         return testLibrary.get(index);
+    }
+
+    public static Test getTestFromName(String name) {
+        for (Test test : testLibrary) {
+            if (test.getName().equals(name)) return test;
+        }
+        return null;
     }
 
     public static void addToLibrary(Test test) {
@@ -68,24 +78,22 @@ public class TestLibrary {
 
     public static void saveLibrary() {
         try (FileWriter writer = new FileWriter(libraryFile)) {
-            writer.write(textTypeOfTests(testLibrary));
+            writer.write(textTypeOfTests());
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private static String textTypeOfTests(ArrayList<Test> testLibrary) {
+    private static String textTypeOfTests() {
         StringBuilder text = new StringBuilder();
 
-        text.append("Tests size: ").append(testLibrary.size()).append("\n\n\n");
+        text.append("Tests size: ").append(TestLibrary.testLibrary.size()).append("\n\n\n");
 
-        for (int i = 0; i < testLibrary.size(); i++) {
+        for (int i = 0; i < TestLibrary.testLibrary.size(); i++) {
 
             text.append("Test number ").append(i + 1).append("\n");
-            text.append(testLibrary.get(i).toString()).append("\n");
+            text.append(TestLibrary.testLibrary.get(i).toString()).append("\n");
         }
         return text.toString();
     }
-
-    //    public static void fillTestLibrary
 }

@@ -4,14 +4,16 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" styleClass="css\SelectTestWindow" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SelectTestWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1300.0" styleClass="css\SelectTestWindow" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SelectTestWindowController">
     <children>
         <Pane layoutY="25.0" prefHeight="45.0" prefWidth="700.0" AnchorPane.bottomAnchor="430.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
             <children>
-                <Button layoutX="20.0" layoutY="10.0" mnemonicParsing="false" styleClass="clever-button" stylesheets="@css/SelectTestWindow.css" text="Button" />
+                <Button layoutX="20.0" layoutY="11.0" mnemonicParsing="false" styleClass="clever-button" stylesheets="@css/SelectTestWindow.css" text="Button" />
                 <Button layoutX="550.0" layoutY="10.0" mnemonicParsing="false" text="Button" />
                 <Button layoutX="614.0" layoutY="10.0" mnemonicParsing="false" text="Button" />
                 <Button layoutX="465.0" layoutY="10.0" mnemonicParsing="false" text="Button" />
@@ -36,5 +38,14 @@
                 </Menu>
             </menus>
         </MenuBar>
+      <TableView fx:id="testTable" layoutX="1.0" layoutY="1.0" prefHeight="680.0" prefWidth="1299.0" style="-fx-background-color: #f5f5f5;" stylesheets="@css/SelectTestWindow.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+         <columns>
+            <TableColumn fx:id="testNameCol" prefWidth="587.0" resizable="false" text="Test name" />
+            <TableColumn fx:id="queNumbersCol" prefWidth="266.0" resizable="false" style="-fx-alignment: CENTER;" text="Number of questions" />
+         </columns>
+          <items>
+              
+          </items>
+      </TableView>
     </children>
 </AnchorPane>

@@ -2,6 +2,7 @@ package run;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import service.TestLibrary;
 
 import static run.Window.*;
 
@@ -12,9 +13,11 @@ public class Client extends Application {
 
     @Override
     public void start(Stage stage) {
+        TestLibrary.fillTestLibrary();
+
         Client.stage = stage;
 
-        setStage(Ask);
+        setStage(SelectTest);
         stage.show();
     }
 
