@@ -5,7 +5,7 @@ import service.TestLibrary;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class FillTestLibrary {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         TestLibrary.fillTestLibrary();

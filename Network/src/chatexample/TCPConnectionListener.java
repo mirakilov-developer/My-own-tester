@@ -1,4 +1,4 @@
-import java.net.Socket;
+package chatexample;
 
 public interface TCPConnectionListener {
     void onConnectionReady(TCPConnection tcpConnection);

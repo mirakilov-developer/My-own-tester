@@ -6,9 +6,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import model.Answer;
 import model.Question;
 import run.Client;
+import run.Window;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,6 +18,7 @@ import java.util.List;
 
 
 public class AskWindowController {
+    public AnchorPane anchor;
     List<String> variants = new ArrayList<>();
     String correctVariant = "4";
     private Question que;

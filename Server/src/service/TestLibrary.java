@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class TestLibrary {
     private static ArrayList<Test> testLibrary = new ArrayList<>();
-    private static File libraryFile = new File("E:\\I_am_back\\Tester\\Server\\src\\resources\\library.txt");
+    private static File libraryFile = new File("E:\\I_am_back\\Tester\\chatexample.Server\\src\\resources\\library.txt");
 
     public static void fillTestLibrary() {
         try (Scanner scanner = new Scanner(libraryFile)) {

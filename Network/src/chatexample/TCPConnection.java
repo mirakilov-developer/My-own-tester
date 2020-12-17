@@ -1,9 +1,8 @@
+package chatexample;
+
 import java.io.*;
 import java.net.Socket;
-import java.nio.Buffer;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
-import java.util.Scanner;
 
 public class TCPConnection {
     private final Socket socket;
@@ -45,7 +44,7 @@ public class TCPConnection {
 
     @Override
     public String toString() {
-        return "TCPConnection: " + socket.getInetAddress() + ":" + socket.getPort();
+        return "chatexample.TCPConnection: " + socket.getInetAddress() + ":" + socket.getPort();
     }
 
     public synchronized void sendString(String value) {

@@ -1,8 +1,10 @@
+package chatexample;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.ArrayList;
 
-public class Server implements TCPConnectionListener{
+public class Server implements TCPConnectionListener {
     public static void main(String[] args) {
         new Server();
     }
@@ -10,13 +12,13 @@ public class Server implements TCPConnectionListener{
     private final ArrayList<TCPConnection> connections = new ArrayList<>();
 
     private Server(){
-        System.out.println("Server running...");
+        System.out.println("chatexample.Server running...");
         try (ServerSocket serverSocket = new ServerSocket(8189)){
             while (true) {
                 try {
                     new TCPConnection(this, serverSocket.accept());
                 }catch (IOException e) {
-                    System.out.println("TCPConnection exception");
+                    System.out.println("chatexample.TCPConnection exception");
                 }
             }
         } catch (IOException e) {
@@ -42,7 +44,7 @@ public class Server implements TCPConnectionListener{
 
     @Override
     public synchronized void onException(TCPConnection tcpConnection, Exception e) {
-        System.out.println("TCPConnection exception: " + e);
+        System.out.println("chatexample.TCPConnection exception: " + e);
     }
 
     private void sentToAllConnections(String value){
