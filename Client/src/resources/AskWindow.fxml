@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ClientWindowController">
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="css\AskWindow" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AskWindowController">
    <children>
       <Pane layoutX="76.0" layoutY="65.0" prefHeight="292.0" prefWidth="448.0">
          <children>
@@ -19,7 +19,7 @@
                </children>
             </Pane>
             <Label fx:id="questionText" layoutX="29.0" layoutY="30.0" prefHeight="17.0" prefWidth="195.0" text="Question" />
-            <Button fx:id="submit" layoutX="325.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#sendAnswers" text="Submit" />
+            <Button fx:id="submit" layoutX="325.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#sendAnswers" stylesheets="@css/AskWindow.css" text="Submit" />
             <Label fx:id="correctVar" layoutX="297.0" layoutY="192.0" text="Show correct variant" visible="false" />
             <Label fx:id="counter" layoutX="311.0" layoutY="201.0" text="Label" />
          </children>

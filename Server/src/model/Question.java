@@ -48,6 +48,10 @@ public class Question {
         this.questionText = questionText;
     }
 
+    public String getCorrectVariantStr() {
+        return variants.get(correctVariant);
+    }
+
     public int getCorrectVariant() {
         return correctVariant;
     }

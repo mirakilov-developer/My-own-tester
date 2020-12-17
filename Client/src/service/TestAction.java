@@ -10,7 +10,6 @@ import java.util.Map;
 
 public class TestAction {
     private Test test;
-    private List<Answer> answers;
 
     public TestAction(int testNumber) {
         this.test = TestLibrary.getTestFromIndex(testNumber);
@@ -19,7 +18,7 @@ public class TestAction {
     public int doTest(Map<Integer, String> map){
         int counter = 0;
 
-        answers = new ArrayList<>();
+        List<Answer> answers = new ArrayList<>();
 
         for (Map.Entry<Integer, String> el: map.entrySet()) {
             Answer answer = new Answer(test.getQuestions().get(el.getKey()), el.getValue());
@@ -31,5 +30,9 @@ public class TestAction {
         }
 
         return counter;
+    }
+
+    public Test getTest() {
+        return test;
     }
 }

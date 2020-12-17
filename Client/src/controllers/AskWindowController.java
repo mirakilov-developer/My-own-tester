@@ -8,13 +8,14 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
 import model.Answer;
 import model.Question;
+import run.Client;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 
-public class ClientWindowController {
+public class AskWindowController {
     List<String> variants = new ArrayList<>();
     String correctVariant = "4";
     private Question que;
@@ -77,6 +78,8 @@ public class ClientWindowController {
     }
 
     public void sendAnswers(MouseEvent mouseEvent) {
+        Client.setStage(Window.SelectTest);
+
         if (!var1.isSelected() && !var2.isSelected() &&
                 !var3.isSelected() && var1.isSelected()) {
             return;

@@ -1,3 +1,5 @@
+package run;
+
 import controllers.Window;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,19 +11,28 @@ import static controllers.Window.*;
 
 
 public class Client extends Application {
+    private static Stage stage;
     private static Scene scene;
 
 
     @Override
-    public void start(Stage stage) throws IOException {
-        setScene(Ask);
-        stage.setScene(scene);
-        stage.setTitle("Tester 0.0.01");
+    public void start(Stage stage) {
+        Client.stage = stage;
+
+        setStage(Ask);
         stage.show();
     }
 
     private static void setScene(Window window) {
         scene = window.getScene();
+
+    }
+
+    public static void setStage(Window window) {
+        setScene(window);
+
+        stage.setScene(scene);
+        stage.setTitle(window.getTitle());
     }
 
 
